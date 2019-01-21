@@ -1,2 +1,2 @@
 # HoagieShop
-Lab Report 8
+A fantastic shop for delicious Hoagies.
