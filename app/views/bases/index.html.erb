@@ -1,0 +1,15 @@
+<h1>Bases</h1>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <% @bases.each do |base| %>
+    <tr>
+      <td><%= base.id %></td>
+      <td><%= base.name %></td>
+      <td><%= base.description %></td>
+    </tr>
+  <% end %>
+</table>

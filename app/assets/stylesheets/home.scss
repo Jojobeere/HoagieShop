@@ -1,3 +1,25 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.button_to {
+    margin: 1em;
+    text-align: center
+}
+
+.container {
+    margin: 0px auto;
+    text-align: center;
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start
+}
+
+.item {
+    width: 20rem
+}
+
+.item.title {
+    text-align: center
+}

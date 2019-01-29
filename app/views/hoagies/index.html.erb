@@ -1,12 +1,10 @@
 <h1>Hoagies To Go</h1>
 <%=link_to 'New Order', new_hoagy_path %>
-
 <table>
   <tr>
     <th>Base</th>
     <th colspan="2"></th>
   </tr>
-
   <% @hoagies.each do |hoagie| %>
     <tr>
       <td><%= hoagie.base_id %></td>

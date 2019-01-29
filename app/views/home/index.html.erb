@@ -1,2 +1,13 @@
-<h1>Home#index</h1>
-<%=link_to 'Your Hoagie', hoagies_path %>
+<h1>HoagieShop - Your Hoagie To Go</h1>
+<div class="container">
+  <div class="item">
+    <p class="title">Delicious</p>
+  </div>
+  <div class="item">
+    <p class="title">Fast</p>
+  </div>
+  <div class="item">
+    <p class="title">Home Made</p>
+  </div>
+</div>
+<%=button_to 'Order your Hoagie now!', hoagies_path, :method => :get %>
