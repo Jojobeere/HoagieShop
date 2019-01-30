@@ -4,28 +4,28 @@
     <th>Id</th>
     <th>First Name</th>
     <th>Last Name</th>
-	<th>Email</th>
-	<th>Country</th>
-	<th>City</th>
-	<th>Post Code</th>
-	<th>Street Adress</th>
-	<th>Number Suffix</th>
-	<th>Bank Details</th>
-	<th>Login</th>
+    <th>Email</th>
+    <th>Country</th>
+    <th>City</th>
+    <th>Post Code</th>
+    <th>Street Adress</th>
+    <th>Number Suffix</th>
+    <th>Bank Details</th>
+    <th>Login</th>
   </tr>
   <% @customers.each do |customer| %>
     <tr>
       <td><%= customer.id %></td>
       <td><%= customer.first_name %></td>
       <td><%= customer.last_name %></td>
-	  <td><%= customer.email %></td>
-	  <td><%= customer.country %></td>
-	  <td><%= customer.city %></td>
-	  <td><%= customer.post_code %></td>
-	  <td><%= customer.street_adress %></td>
-	  <td><%= customer.number_suffix %></td>
-	  <td><%= customer.bank_details %></td>
-	  <td><%= customer.login %></td>
+      <td><%= customer.email %></td>
+      <td><%= customer.country %></td>
+      <td><%= customer.city %></td>
+      <td><%= customer.post_code %></td>
+      <td><%= customer.street_adress %></td>
+      <td><%= customer.number_suffix %></td>
+      <td><%= customer.bank_details %></td>
+      <td><%= customer.login %></td>
     </tr>
   <% end %>
 </table>
