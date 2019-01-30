@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :bases
   resources :customers
   resources :hoagies
+  resources :orders
 
   root 'home#index'
 end

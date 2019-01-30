@@ -2,12 +2,17 @@
 <%=link_to 'New Order', new_hoagy_path %>
 <table>
   <tr>
+    <th>Id</th>
+    <th>Order No.</th>
     <th>Base</th>
-    <th colspan="2"></th>
+    <th>Count</th>
   </tr>
   <% @hoagies.each do |hoagie| %>
     <tr>
+      <td><%= hoagie.id %></td>
+      <td><%= hoagie.order_id %></td>
       <td><%= hoagie.base_id %></td>
+      <td><%= hoagie.count %></td>
     </tr>
   <% end %>
 </table>

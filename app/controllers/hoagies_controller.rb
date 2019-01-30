@@ -21,7 +21,8 @@ class HoagiesController < ApplicationController
   end
 
   private
-    def hoagie_params
-      params.require(:hoagie).permit(:base_id)
-    end
+
+  def hoagie_params
+    params.require(:hoagie).permit(:base_id)
+  end
 end
