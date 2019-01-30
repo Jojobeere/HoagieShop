@@ -16,5 +16,19 @@ namespace :db do
     50.times do
       Base.create(name: Faker::Coffee.blend_name, description: Faker::Coffee.notes)
     end
+
+    puts 'Creating Customers...'
+    100.times do
+      Customer.create(first_name: Faker::Name.first_name, 
+        last_name: Faker::Name.last_name,
+        email: Faker::Internet.email,
+        country: Faker::Address.country,
+        city: Faker::Address.city,
+        post_code: Faker::Address.postcode,
+        street_adress: Faker::Address.street_address,
+        number_suffix: '',
+        bank_details: Faker::Bank.iban,
+        login: Faker::Crypto.md5)
+    end
   end
 end

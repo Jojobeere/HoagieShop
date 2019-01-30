@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   get 'home/index'
 
-  resources :hoagies
   resources :bases
+  resources :customers
+  resources :hoagies
 
   root 'home#index'
 end
