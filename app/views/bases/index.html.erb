@@ -4,12 +4,14 @@
     <th>Id</th>
     <th>Name</th>
     <th>Description</th>
+    <th>Price</th>
   </tr>
   <% @bases.each do |base| %>
     <tr>
       <td><%= base.id %></td>
       <td><%= base.name %></td>
       <td><%= base.description %></td>
+      <td><%= base.price %></td>
     </tr>
   <% end %>
 </table>

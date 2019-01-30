@@ -1,4 +1,4 @@
 class Comment < ApplicationRecord
-  foreign_key: "review_id",
-  foreign_key: "customer_id"
+  belongs_to :customer, foreign_key: "customer_id"
+  belongs_to :review, foreign_key: "review_id"
 end

@@ -11,7 +11,6 @@ class CreateCustomers < ActiveRecord::Migration[5.1]
       t.string :number_suffix
       t.string :bank_details
       t.string :login
-
       t.timestamps
     end
   end

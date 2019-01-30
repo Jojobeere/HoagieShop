@@ -1,4 +1,4 @@
 class Order < ApplicationRecord
-  has_many :hoagies,
-  foreign_key: "customer_id"
+  belongs_to :customer, foreign_key: "customer_id"
+  has_many :hoagies
 end
