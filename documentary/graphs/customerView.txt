@@ -1,0 +1,16 @@
+digraph G {
+  "View/Links of a Customer"
+  "Homepage" -> "Reviews"
+  "Homepage" -> "Comments"
+  "Comments" -> "Reviews"
+  "Homepage" -> "Bases" [ label = "When clicking on 'order'" ];
+  "Bases" -> "Ingredients" [ label = "When clicking on a Hoagie/Base" ];
+  "Ingredients" -> "Changing/Updating ingredients"
+  "Changing/Updating ingredients" -> "Adding to cart"
+  "Adding to cart" -> "Bases" [ label = "Order more Hoagies" ];
+  "Adding to cart" -> "Check-out"
+  "Check-out" -> "Paying Order"
+  "Paying Order" -> "Feedback of Transaction" [label = "Payment received or not" ];
+  "Feedback of Transaction" -> "Comments"
+  "Feedback of Transaction" -> "Homepage"
+}
