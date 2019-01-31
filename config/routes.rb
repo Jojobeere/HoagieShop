@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :hoagies
   resources :orders
   resources :reviews
+  resources :comments
 
   root 'home#index'
 end

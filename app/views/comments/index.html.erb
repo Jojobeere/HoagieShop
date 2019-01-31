@@ -1,0 +1,15 @@
+<h1>Comments</h1>
+<%=link_to 'Back to Review', reviews_path %>
+<table>
+  <tr>
+    <th>Comment for Review</th>
+    <th>Text</th>
+  </tr>
+  <% @comments.each do |comment| %>
+    <tr>
+      <td><%= comment.review_id %></td>
+      <td><%= comment.text %></td>
+      <td><%= link_to 'Add Comment', new_comment_path(comment) %></td>
+    </tr>
+  <% end %>
+</table>

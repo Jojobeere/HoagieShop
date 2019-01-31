@@ -7,7 +7,7 @@
     <th>Image</th>
     <th>Grade</th>
     <th>Title</th>
-    <th>Comment</th>
+    <th>Text</th>
   </tr>
   <% @reviews.each do |review| %>
     <tr>
@@ -16,6 +16,7 @@
       <td><%= review.grade %></td>
       <td><%= review.title %></td>
       <td><%= review.text %></td>
+      <td><%= link_to 'Add Comment', new_comment_path %></td>
     </tr>
   <% end %>
 </table>
