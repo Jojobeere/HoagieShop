@@ -1,0 +1,21 @@
+<h1>Customers Opinions</h1>
+<%=link_to 'New Order', new_hoagy_path %>
+<%=link_to 'New Review', new_review_path %>
+<table>
+  <tr>
+    <th>Customer</th>
+    <th>Image</th>
+    <th>Grade</th>
+    <th>Title</th>
+    <th>Comment</th>
+  </tr>
+  <% @reviews.each do |review| %>
+    <tr>
+      <td><%= review.id %></td>
+      <td><%= review.selfie %></td>
+      <td><%= review.grade %></td>
+      <td><%= review.title %></td>
+      <td><%= review.text %></td>
+    </tr>
+  <% end %>
+</table>

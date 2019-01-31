@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :customers
   resources :hoagies
   resources :orders
+  resources :reviews
 
   root 'home#index'
 end
