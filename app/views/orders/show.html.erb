@@ -1,0 +1,12 @@
+<p>
+  <strong>Order:</strong>
+  <%= @order.id %>
+  <%= @order.customer_id %>
+  <%= @order.status %>
+  <% Hoagie.where(order_id: @order.id) do |hoagie| %>
+    <%= hoagie.id %>
+    <%= Base.find(hoagie.base_id).inspect %>
+    <%= hoagie.count %>
+  </tr>
+<% end %>
+</p>
