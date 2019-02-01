@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   resources :customers
   resources :hoagies
   resources :orders
-  resources :reviews
+
+  resources :reviews do
+    resources :comments
+  end
 
   root 'home#index'
 end
