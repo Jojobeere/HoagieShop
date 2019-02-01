@@ -1,16 +1,39 @@
 digraph G {
-  "View/Links of a Customer" [shape = doublecircle];
-  "Homepage" -> "Reviews" -> "Comments"
+  graph [	fontsize = 36,
+		label = "\nView/Links of a Customer" ];
+  "Homepage" -> "Order your Hoagie now!";
+  "Homepage" -> "Customer Reviews" -> "Reviews";
+  "Order your Hoagie now!" -> "Customer" [ label = "shows login" ];
+  "Customer" -> "Login" [ label = "existing customer_id" ];
+  "Login" -> "Bases" [ label = "shows Hoagie Bases" ];
+  "Bases" -> "Selecting Hoagie Base";
+  "Selecting Hoagie Base" -> "Ingredients" [ label = "shows ingredients and selected Base" ];
+  "Ingredients" -> "Pick ingredients";
+  "Ingredients" -> "Submit Hoagie";
+  "Pick ingredients" -> "Order";
+  "Submit Hoagie" -> "Order" [ label = "adds Hoagie to (new) Order" ];
+  "Order" -> "Order more Hoagies" -> "Bases";
+  "Order" -> "Adjust number of Hoagies" -> "Check-out";
+  "Order" -> "Check-out";
   "Reviews" -> "Adding review" -> "Uploading selfie" -> "Reviews"
-  "Homepage" -> "Bases" [ label = "When clicking on 'order'" ];
-  "Bases" -> "Ingredients" [ label = "Through buttons" ];
-  "Ingredients" -> "Changing/Updating ingredients"
-  "Changing/Updating ingredients" -> "Adding to cart"
-  "Bases" -> "Adding to cart" [ label = "Order (more) Hoagies" ];
-  "Adding to cart" -> "Bases"
-  "Adding to cart" -> "Check-out"
+  "Reviews" -> "Commenting on review" -> "Reviews";
+  "Reviews" -> "See All Comments" -> "Comments" -> "Commenting in comment section" -> "Comments";
   "Check-out" -> "Paying Order"
   "Paying Order" -> "Feedback of Transaction" [label = "If payment was unsuccessful, try again" ];
   "Feedback of Transaction" -> "Paying Order"
   "Feedback of Transaction" -> "Homepage"
+
+  "Order your Hoagie now!" [shape = rectangle];
+  "Customer Reviews" [shape = rectangle];
+  "Login" [shape = rectangle];
+  "Selecting Hoagie Base" [shape = rectangle];
+  "Pick ingredients" [shape = rectangle];
+  "Order more Hoagies" [shape = rectangle];
+  "Adjust number of Hoagies" [shape = rectangle];
+  "Check-out" [shape = rectangle];
+  "Submit Hoagie" [shape = rectangle];
+  "Adding review" [shape = rectangle];
+  "Commenting on review" [shape = rectangle];
+  "Commenting in comment section" [shape = rectangle];
+  "See All Comments" [shape = rectangle];
 }
