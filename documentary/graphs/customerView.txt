@@ -1,0 +1,16 @@
+digraph G {
+  "View/Links of a Customer" [shape = doublecircle];
+  "Homepage" -> "Reviews" -> "Comments"
+  "Reviews" -> "Adding review" -> "Uploading selfie" -> "Reviews"
+  "Homepage" -> "Bases" [ label = "When clicking on 'order'" ];
+  "Bases" -> "Ingredients" [ label = "Through buttons" ];
+  "Ingredients" -> "Changing/Updating ingredients"
+  "Changing/Updating ingredients" -> "Adding to cart"
+  "Bases" -> "Adding to cart" [ label = "Order (more) Hoagies" ];
+  "Adding to cart" -> "Bases"
+  "Adding to cart" -> "Check-out"
+  "Check-out" -> "Paying Order"
+  "Paying Order" -> "Feedback of Transaction" [label = "If payment was unsuccessful, try again" ];
+  "Feedback of Transaction" -> "Paying Order"
+  "Feedback of Transaction" -> "Homepage"
+}
