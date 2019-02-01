@@ -10,7 +10,6 @@
     <p class="title">Home Made</p>
   </div>
 </div>
-<%=button_to 'First view your Base Options', bases_path, :method => :get %>
-<%=button_to 'Order your Hoagie now!', new_hoagy_path, :method => :get %>
-<%=button_to 'View your current Order', orders_path, :method => :get %>
-<%=button_to 'Customers Opinions', reviews_path, :method => :get %>
+<%=button_to 'Login', login_path, :method => :get %>
+<%=button_to 'Order your Hoagie now!', order_process_path, :method => :get %>
+<%=button_to 'Customers Reviews', reviews_path, :method => :get %>

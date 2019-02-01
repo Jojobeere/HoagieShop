@@ -1,18 +1,5 @@
 <h1>Login</h1>
-<%= form_with scope: :session, url: login_path, local: true do |form| %>
-  <% if @current_users.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@current_users.errors.count, "error") %> prohibited
-        from logging in:
-      </h2>
-      <ul>
-        <% @current_users.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_with scope: :customer, url: login_path, local: true do |form| %>
   <p>
     <%= form.label :id %><br>
     <%= form.text_field :id %>
