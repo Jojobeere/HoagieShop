@@ -15,7 +15,7 @@
   <% @reviews.each do |review| %>
     <tr>
       <td><%= review.id %></td>
-      <td><%= review.selfie %></td>
+      <td class="selfie"><%= review.selfie = image_tag(get_random_image, :size => "175x120") %></td>
       <td><%= review.grade %></td>
       <td><%= review.title %></td>
       <td><%= review.text %></td>
