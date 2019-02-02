@@ -10,7 +10,9 @@
     <th>Grade</th>
     <th>Title</th>
     <th>Review Text</th>
-    <th>Comments</th>    
+    <th>Latest Comment</th>
+    <th>More Comments</th>
+    <th>No. in Total</th>
   </tr>
 
   <% @reviews.each do |review| %>
@@ -20,11 +22,9 @@
       <td><%= review.grade %></td>
       <td><%= review.title %></td>
       <td><%= review.text %></td>
+      <td><%= Comment.where(review_id: review).pluck(:text).last %></td>
       <td><%= link_to 'See Comments', review_path(review) %></td>
-
+      <td><%= Comment.where(review_id: review).count.to_i %></td>
     </tr>
   <% end %>
 </table>
-
-<%#  Code vorerst rausgenommen: %>
-<%# <%= link_to 'Add Comment', new_comment_path(review) %> %>
