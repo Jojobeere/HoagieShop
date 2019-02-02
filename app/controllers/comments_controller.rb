@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
   #   end
   # end
 
-# vorheriger Code zur Sicherheit noch drinnen gelassen
+  # vorheriger Code zur Sicherheit noch drinnen gelassen
   # def create
   #   @comment = Comment.new(comment_params)
   #   if @comment.save
@@ -39,13 +39,14 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-  @review = Review.find(params[:review_id])
-  @comment = @review.comments.find(params[:id])
-  @comment.destroy
-  redirect_to review_path(@review)
-end
+    @review = Review.find(params[:review_id])
+    @comment = @review.comments.find(params[:id])
+    @comment.destroy
+    redirect_to review_path(@review)
+  end
 
   private
+
   def comment_params
     params.require(:comment).permit(:review_id, :text)
   end

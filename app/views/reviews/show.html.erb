@@ -1,4 +1,3 @@
-
 <p>
   <strong>Selfie:</strong>
   <%=@review.selfie.url %>
@@ -7,21 +6,16 @@
   <strong>Title:</strong>
   <%= @review.title %>
 </p>
-
 <p>
   <strong>Written by Customer:</strong>
   <%= @review.id %>
 </p>
-
 <p>
   <strong>Text:</strong>
   <%= @review.text %>
 </p>
-
 <h2>Comments</h2>
 <%= render @review.comments %>
-
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
-
 <%= link_to 'Back', reviews_path %>
