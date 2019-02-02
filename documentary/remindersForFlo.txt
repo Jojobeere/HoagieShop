@@ -1,0 +1,6 @@
+To-Considers:
+- vergiss nicht dass comments path immer mit review anfangen
+
+To-Dos:
+- @Flo du müsstest bei destroy in comments and reviews ein if statement machen um zu prüfen ob die von deren ersteller gelöscht werden
+- 6. Refactor your code as necessary, and see if you can manage to get the short reviews set up and working. Can you also add the selfies here? Wait a minute, if they can upload pictures, the users can upload any kind of photo. Better set up an application for the admin to review and delete fotos.
