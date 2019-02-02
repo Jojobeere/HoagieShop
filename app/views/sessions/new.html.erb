@@ -1,0 +1,10 @@
+<h1>Login</h1>
+<%= form_with scope: :customer, url: login_path, local: true do |form| %>
+  <p>
+    <%= form.label :id %><br>
+    <%= form.text_field :id %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

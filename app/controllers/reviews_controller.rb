@@ -34,7 +34,4 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:title, :text, :selfie)
   end
-  def set_review
-   @review = Review.find(params[:id])
- end
 end
