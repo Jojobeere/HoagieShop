@@ -7,15 +7,15 @@ class CommentsController < ApplicationController
     @comments = Comment.all
   end
 
-  def create
-    @review = Review.find(params[:review_id])
-    @comment = @review.comments.create(comment_params)
-    if @comment.save
-      redirect_to review_path(@review)
-    else
-      render 'new'
-    end
-  end
+  # def create
+  #   @review = Review.find(params[:review_id])
+  #   @comment = @review.comments.create(comment_params)
+  #   if @comment.save
+  #     redirect_to review_path(@review)
+  #   else
+  #     render 'new'
+  #   end
+  # end
 
 # vorheriger Code zur Sicherheit noch drinnen gelassen
   # def create
@@ -26,6 +26,13 @@ class CommentsController < ApplicationController
   #     render 'new'
   #   end
   # end
+
+  def create
+    @review = Review.find(params[:review_id])
+    @comment = @review.comments.create(comment_params)
+    @review.inspect
+    redirect_to review_path(@review)
+  end
 
   def show
     @comment = Comment.find(params[:id])
