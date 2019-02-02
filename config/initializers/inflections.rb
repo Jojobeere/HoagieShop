@@ -18,4 +18,6 @@
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'hoagie', 'hoagies'
   inflect.irregular 'Hoagie', 'Hoagies'
+  inflect.irregular 'base', 'bases'
+  inflect.irregular 'Base', 'Bases'
 end
