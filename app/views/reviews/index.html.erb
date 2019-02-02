@@ -1,0 +1,27 @@
+<h1>Customer Review</h1>
+<%=link_to 'New Order', new_order_path %> |
+<%=link_to 'New Review', new_review_path %>
+<table>
+  <tr>
+    <th>Customer</th>
+    <th>Image</th>
+    <th>Grade</th>
+    <th>Title</th>
+    <th>Review Text</th>
+    <th>Latest Comment</th>
+    <th>More Comments</th>
+    <th>No. in Total</th>
+  </tr>
+  <% @reviews.each do |review| %>
+    <tr>
+      <td><%= review.id %></td>
+      <td><%= review.selfie %></td>
+      <td><%= review.grade %></td>
+      <td><%= review.title %></td>
+      <td><%= review.text %></td>
+      <td><%= Comment.where(review_id: review).pluck(:text).last %></td>
+      <td><%= link_to 'See Comments', review_path(review) %></td>
+      <td><%= Comment.where(review_id: review).count.to_i %></td>
+    </tr>
+  <% end %>
+</table>

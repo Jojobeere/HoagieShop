@@ -8,7 +8,8 @@ class HoagiesController < ApplicationController
   end
 
   def create
-    @hoagie = Hoagie.new(hoagie_params)
+    @order = Order.find_by(customer_id: session[:customer_id], status: nil)
+    @hoagie = @order.hoagies.build(hoagie_params)
     if @hoagie.save
       redirect_to @hoagie
     else
@@ -23,6 +24,6 @@ class HoagiesController < ApplicationController
   private
 
   def hoagie_params
-    params.require(:hoagie).permit(:base_id)
+    params.require(:hoagie).permit(:base_id, :order_id, :count)
   end
 end

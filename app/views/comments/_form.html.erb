@@ -1,0 +1,13 @@
+<%= form_with(model: [ @review, @review.comments.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :review_id %><br>
+    <%= form.text_field :review_id %>
+  </p>
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

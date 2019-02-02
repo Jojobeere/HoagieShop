@@ -4,12 +4,23 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @order = Order.new
+    if session[:customer_id].nil?
+      redirect_to login_path
+    else
+      @order = Order.new
+      @order.customer_id = session[:customer_id]
+      @order.hoagies.build
+    end
   end
 
   def create
-    @order = Order.new(order_params)
-    if @order.save
+    @order = Order.find_by(customer_id: session[:customer_id], status: nil)
+    if @order.nil?
+      @order = Order.new
+      @order.customer_id = session[:customer_id]
+    end
+    @order.status = 'Waiting'
+    if @order.update(order_params)
       redirect_to @order
     else
       render 'new'
@@ -18,11 +29,13 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @hoagies = Hoagie.where(order_id: @order.id)
   end
 
   private
 
   def order_params
-    params.require(:order).permit(:customer_id)
+    params.require(:order).permit(:customer_id, :status, :price, :hoagies_attributes => [:id, :base_id, :count])
   end
+
 end

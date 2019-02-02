@@ -1,0 +1,13 @@
+<p>
+  <strong>Order:</strong>
+  <%= @order.id %><br>
+  <%= Customer.find(@order.customer_id).first_name %>
+  <%= Customer.find(@order.customer_id).last_name %><br>
+  <%= @order.status %><br>
+</p>
+<p>
+  <% @hoagies.each do |hoagie| %>
+    <%= hoagie.count %> x
+    <%= ::Base.find(hoagie.base_id).name %><br>
+  <% end %>
+</p>
