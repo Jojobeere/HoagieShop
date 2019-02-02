@@ -10,6 +10,10 @@
     <p class="title">Home Made</p>
   </div>
 </div>
-<%=button_to 'Login', login_path, :method => :get %>
+<% if session[:customer_id].nil? %>
+  <%=button_to 'Login', login_path, :method => :get %>
+<% else %>
+  <%=button_to 'Logout', logout_path, :method => :delete %>
+<% end %>
 <%=button_to 'Order your Hoagie now!', new_order_path, :method => :get %>
 <%=button_to 'Customers Reviews', reviews_path, :method => :get %>
