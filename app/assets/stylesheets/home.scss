@@ -5,7 +5,9 @@ body {
     max-width: 100%;
     font-family: sans-serif;
     background-image: url(hoagie.jpg);
+    background-size: 100%, 100%;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 h1 {
