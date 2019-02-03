@@ -1,6 +1,11 @@
 # https://www.railstutorial.org/book/basic_login %
 class SessionsController < ApplicationController
+  http_basic_authenticate_with name: 'admin247', password: 'secret!', only: %i[index edit show]
   def new
+    unless session[:customer_id].nil?
+      @current_user = Customer.find(session[:customer_id])
+      redirect_to customer_path(@current_user)
+    end
   end
 
   def create

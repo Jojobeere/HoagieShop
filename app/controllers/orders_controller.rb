@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  http_basic_authenticate_with name: "admin247", password: "secret!", only: [:index]
   def index
     @orders = Order.all
   end
