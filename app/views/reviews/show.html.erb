@@ -1,21 +1,27 @@
 <p>
   <strong>Selfie:</strong>
-  <%=@review.selfie.url %>
+  <%= @review.selfie.url %>
 </p>
+
 <p>
   <strong>Title:</strong>
   <%= @review.title %>
 </p>
+
 <p>
-  <strong>Written by Customer:</strong>
-  <%= @review.id %>
+  <strong>customer_id:</strong>
+  <%= @review.customer_id %>
 </p>
+
 <p>
   <strong>Text:</strong>
   <%= @review.text %>
 </p>
+
 <h2>Comments</h2>
 <%= render @review.comments %>
+
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
+
 <%= link_to 'Back', reviews_path %>
