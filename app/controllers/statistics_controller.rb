@@ -1,5 +1,5 @@
 class StatisticsController < ApplicationController
-  http_basic_authenticate_with name: 'admin247', password: 'secret!', only: [:index]
+  http_basic_authenticate_with name: 'admin247', password: 'secret!'
   def create
     @statistic = Statistic.new(statistic_params)
     redirect_to @statistic
