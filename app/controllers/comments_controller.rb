@@ -1,41 +1,13 @@
 class CommentsController < ApplicationController
-  def new
-    @comments = Comment.all
-  end
-
-  def index
-    @comments = Comment.all
-  end
-
-  # def create
-  #   @review = Review.find(params[:review_id])
-  #   @comment = @review.comments.create(comment_params)
-  #   if @comment.save
-  #     redirect_to review_path(@review)
-  #   else
-  #     render 'new'
-  #   end
-  # end
-
-  # vorheriger Code zur Sicherheit noch drinnen gelassen
-  # def create
-  #   @comment = Comment.new(comment_params)
-  #   if @comment.save
-  #     redirect_to @comment
-  #   else
-  #     render 'new'
-  #   end
-  # end
-
   def create
     @review = Review.find(params[:review_id])
     @comment = @review.comments.create(comment_params)
-    @review.inspect
     redirect_to review_path(@review)
   end
 
   def show
     @comment = Comment.find(params[:id])
+    redirect_to review_path(@review)
   end
 
   def destroy
@@ -48,6 +20,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:review_id, :text)
+    params.require(:comment).permit(:customer_id, :text)
   end
 end

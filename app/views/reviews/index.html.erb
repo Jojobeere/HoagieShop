@@ -1,6 +1,7 @@
-<h1>Customers Opinions</h1>
-<%=link_to 'New Order', new_hoagie_path %> |
-<%=link_to 'New Review', new_review_path %>
+<h1>Customer Review</h1>
+<%= link_to 'New Order', new_order_path %> |
+<%= link_to 'New Review', new_review_path %>
+
 <table>
   <tr>
     <th>Customer</th>
@@ -12,10 +13,11 @@
     <th>More Comments</th>
     <th>No. in Total</th>
   </tr>
+  
   <% @reviews.each do |review| %>
     <tr>
-      <td><%= review.id %></td>
-      <td><%= review.selfie %></td>
+      <td><%= review.customer_id %></td>
+      <td class="selfie"><%= review.selfie = image_tag(get_random_image, :size => "175x120") %></td>
       <td><%= review.grade %></td>
       <td><%= review.title %></td>
       <td><%= review.text %></td>

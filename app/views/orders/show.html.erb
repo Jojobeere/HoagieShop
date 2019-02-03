@@ -1,13 +1,22 @@
+<h1>Order No. <%= @order.id %></h1>
 <p>
-  <strong>Order:</strong>
-  <%= @order.id %><br>
-  <%= Customer.find(@order.customer_id).first_name %>
-  <%= Customer.find(@order.customer_id).last_name %><br>
-  <%= @order.status %><br>
+  <strong>Your Details:</strong>
+  <%= render 'customers/form' %>
 </p>
+<strong>Status</strong>
+<%= @order.status %><br>
 <p>
+  <strong>Hoagies:</strong>
   <% @hoagies.each do |hoagie| %>
     <%= hoagie.count %> x
-    <%= ::Base.find(hoagie.base_id).name %><br>
+    <%= ::Base.find(hoagie.base_id).name %>
+    <% OrderedAdditionally.where(hoagie_id: hoagie.id).each do |extra| %>
+      + <%= Ingredient.find(extra.ingredient_id).name %><br>
+    <% end %>
   <% end %>
 </p>
+<p>
+  <strong>Price:</strong>
+  <%= @order.price %> EUR<br>
+</p>
+<%= link_to 'Back to Homepage', home_index_path %>

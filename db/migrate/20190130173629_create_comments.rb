@@ -5,7 +5,6 @@ class CreateComments < ActiveRecord::Migration[5.1]
       t.belongs_to :customer
       t.text :text
       t.string :image
-      t.references :review, foreign_key: true
       t.timestamps
     end
 

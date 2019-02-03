@@ -64,7 +64,7 @@ namespace :db do
     puts 'Reviewing Hoagies...'
     50.times do
       Review.create(customer_id: prng.rand(50) + 1,
-                    selfie: 'HoagieShop Images',
+                    selfie: "/app/assets/images/selfie1.jpg",
                     grade: prng.rand(5) + 1,
                     title: Faker::NewGirl.quote,
                     text: Faker::GameOfThrones.quote)

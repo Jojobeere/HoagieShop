@@ -10,7 +10,11 @@
   </tr>
   <%customers = Customer.take(50)%>
   <% customers.each do |customer| %>
+<<<<<<< HEAD
   <%orders = Order.where(customer_id: customer.id)%>
+=======
+    <%orders = Order.where(customer_id: customer.id)%>
+>>>>>>> 59b3e9e611efd0259d9eeb96e4416ec417b0abe0
     <tr>
       <td><%= customer.id %></td>
       <td><%= customer.first_name%></td>

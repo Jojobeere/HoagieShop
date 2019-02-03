@@ -1,36 +1,41 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.button_to {
-    margin: 1em;
-    text-align: center
-}
 body {
     max-width: 100%;
     font-family: sans-serif;
     background-image: url(hoagie.jpg);
+    background-size: 100%, 100%;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
+
 h1 {
-  font-size: 3em;
-  background-color:rgba(255, 248, 220, 0.6);
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 8em;
-  height: auto;
+    font-size: 3em;
+    background-color: rgba(255, 248, 220, 0.6);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 8em;
+    height: auto;
 }
+
 h2 {
-  text-align: center;
-  font-size: 2em;
-  background-color:rgba(255, 248, 220, 0.4);
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 9em;
-  height: auto;
+    text-align: center;
+    font-size: 2em;
+    background-color: rgba(255, 248, 220, 0.4);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 9em;
+    height: auto;
+}
+
+.button_to {
+    margin: 1em;
+    text-align: center
 }
 
 .container {
-  background-color: rgba(255, 248, 220, 0.3);
+    background-color: rgba(255, 248, 220, 0.3);
     margin: 0px auto;
     text-align: center;
     width: 50vw;
