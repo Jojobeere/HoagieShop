@@ -1,14 +1,24 @@
 class ReviewsController < ApplicationController
-  def new
-    @reviews = Review.all
-  end
 
   def index
     @reviews = Review.all
   end
 
+  def show
+    @review = Review.find(params[:id])
+  end
+
+  def edit
+    @reviews = Review.find(params[:id])
+  end
+
+  def new
+    @reviews = Review.new
+  end
+
   def create
     @review = Review.new(review_params)
+
     if @review.save
       redirect_to review_path
     else
@@ -16,21 +26,25 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def show
-    @review = Review.find(params[:id])
-  end
-
   def update
-    if @review.update_attributes(review_params)
+    @review = Review.find(params[:id])
+
+    if @review.update(review_params)
       redirect_to @review
     else
-      render :edit
+      render 'edit'
     end
   end
 
-  private
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
 
+    redirect_to review_path
+  end
+
+  private
   def review_params
-    params.require(:review).permit(:title, :text, :selfie)
+    params.require(:review).permit(:customer_id, :title, :text, :grade, :selfie)
   end
 end

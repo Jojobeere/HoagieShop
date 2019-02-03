@@ -1,6 +1,7 @@
 <h1>Customer Review</h1>
-<%=link_to 'New Order', new_order_path %> |
-<%=link_to 'New Review', new_review_path %>
+<%= link_to 'New Order', new_order_path %> |
+<%= link_to 'New Review', new_review_path %>
+
 <table>
   <tr>
     <th>Customer</th>
@@ -12,6 +13,7 @@
     <th>More Comments</th>
     <th>No. in Total</th>
   </tr>
+  
   <% @reviews.each do |review| %>
     <tr>
       <td><%= review.customer_id %></td>
