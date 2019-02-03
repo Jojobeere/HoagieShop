@@ -4,12 +4,15 @@
   <%= Customer.find(@order.customer_id).first_name %>
   <%= Customer.find(@order.customer_id).last_name %><br>
   <%= @order.status %><br>
+<<<<<<< HEAD
 </p>
 <p>
   <% @hoagies.each do |hoagie| %>
     <%= hoagie.count %> x
     <%= ::Base.find(hoagie.base_id).name %><br>
   <% end %>
+=======
+>>>>>>> a6bb9372d4367791a70ff92ed16efcc8ba0c8fe0
 </p>
 <p>
   <% @hoagies.each do |hoagie| %>
