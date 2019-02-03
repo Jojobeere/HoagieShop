@@ -1,7 +1,7 @@
 class StatisticsController < ApplicationController
   def create
-      @statitic = Statistic.new(statistic_params)
-      redirect_to @statistics
+      @statistic = Statistic.new(statistic_params)
+      redirect_to @statistic
     end
 
     private
