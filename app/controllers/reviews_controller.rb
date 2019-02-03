@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
 
     if @review.save
-      redirect_to review_path
+      redirect_to @review
     else
       render 'new'
     end
