@@ -16,10 +16,16 @@
     <%= f.fields_for :hoagies do |hoagie| %>
       <li>
         <%= hoagie.label :base_id %>
-        <%= hoagie.text_field :base_id %>
+        <%= hoagie.collection_select(:base_id, ::Base.all, :id, :name) %>
         <%= hoagie.label :count %>
         <%= hoagie.text_field :count %>
       </li>
+      <%= hoagie.fields_for :ordered_additionallies do |extra| %>
+        <li>
+          <%= extra.label :ingredient_id %>
+          <%= extra.collection_select(:ingredient_id, ::Ingredient.all, :id, :name) %>
+        </li>
+      <% end %>
     <% end %>
   </ul>
   <%= f.submit %>

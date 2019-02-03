@@ -9,7 +9,7 @@
   <% @orders.each do |order| %>
     <tr>
       <td><%= order.id %></td>
-      <td><%= order.customer_id %></td>
+      <td><%= Customer.find(order.customer_id).first_name %> <%= Customer.find(order.customer_id).last_name %></td>
       <td><%= order.status %></td>
       <td><%= order.price %></td>
     </tr>

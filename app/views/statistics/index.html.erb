@@ -10,7 +10,7 @@
   </tr>
   <%customers = Customer.take(50)%>
   <% customers.each do |customer| %>
-  <%orders = Order.where(customer_id: customer.id)%>
+    <%orders = Order.where(customer_id: customer.id)%>
     <tr>
       <td><%= customer.id %></td>
       <td><%= customer.first_name%></td>
@@ -19,5 +19,5 @@
       <td><%= orders.average("price") %></td>
       <td><%= Review.where(customer_id: customer.id).count.to_i %></td>
     </tr>
-<% end %>
+  <% end %>
 </table>

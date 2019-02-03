@@ -1,18 +1,22 @@
 <h1>Hoagies To Go</h1>
-<%=link_to 'New Order', new_hoagie_path %>
-<p class="title1">My previous Orders</p>
 <table>
   <tr>
     <th>Id</th>
     <th>Order No.</th>
     <th>Base</th>
+    <th>Extras</th>
     <th>Count</th>
   </tr>
   <% @hoagies.each do |hoagie| %>
     <tr>
       <td><%= hoagie.id %></td>
       <td><%= hoagie.order_id %></td>
-      <td><%= hoagie.base_id %></td>
+      <td><%= ::Base.find(hoagie.base_id).name %></td>
+      <td>
+        <% OrderedAdditionally.where(hoagie_id: hoagie.id).each do |extra| %>
+          <%= Ingredient.find(extra.ingredient_id).name %><br>
+        <% end %>
+      </td>
       <td><%= hoagie.count %></td>
     </tr>
   <% end %>
