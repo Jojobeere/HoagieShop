@@ -1,11 +1,4 @@
 class CommentsController < ApplicationController
-  def new
-    @comments = Comment.all
-  end
-
-  def index
-    @comments = Comment.all
-  end
 
   def create
     @review = Review.find(params[:review_id])
@@ -41,6 +34,6 @@ end
   private
 
   def comment_params
-    params.require(:comment).permit(:review_id, :text)
+    params.require(:comment).permit(:customer_id, :text)
   end
 end
