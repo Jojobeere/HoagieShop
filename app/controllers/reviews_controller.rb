@@ -9,11 +9,11 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @reviews = Review.find(params[:id])
+    @review = Review.find(params[:id])
   end
 
   def new
-    @reviews = Review.new
+    @review = Review.new
   end
 
   def create
@@ -40,11 +40,12 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @review.destroy
 
-    redirect_to review_path
+    redirect_to reviews_path
   end
 
   private
   def review_params
     params.require(:review).permit(:customer_id, :title, :text, :grade, :selfie)
   end
+
 end
