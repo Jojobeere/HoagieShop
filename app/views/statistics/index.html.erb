@@ -1,0 +1,14 @@
+<h1>Statistics</h1>
+<table>
+  <tr>
+    <th>Customer</th>
+    <th>Order Count</th>
+    <th>Review Count</th>
+  </tr>
+  <%= Customer.all.each do |customer|%>
+    <tr>
+      <td><%= Order.where("customer_id = '1'").count.to_i %></td>
+
+        </tr>
+  <% end %>
+</table>
