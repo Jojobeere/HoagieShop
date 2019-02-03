@@ -1,13 +1,5 @@
+<h1>My Account</h1>
 <p>
-  <strong>Customer:</strong>
-  <%= @customer.first_name %>
-  <%= @customer.last_name %><br>
-  <%= @customer.email %><br>
-  <%= @customer.country %><br>
-  <%= @customer.city %>
-  <%= @customer.post_code %><br>
-  <%= @customer.street_adress %>
-  <%= @customer.number_suffix %><br>
-  <%= @customer.bank_details %>
+  <%= render 'customers/form' %>
 </p>
 <%= link_to 'Back to Homepage', home_index_path %>

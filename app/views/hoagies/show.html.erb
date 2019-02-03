@@ -1,4 +1,11 @@
+<h1>Hoagie Recipe <%= @hoagie.id %></h1>
 <p>
-  <strong>Base:</strong>
-  <%= @hoagie.base_id %>
+  <strong>Hoagie Base:</strong>
+  <%= @base %>
+</p>
+<p>
+  <strong>Hoagie Extras:</strong>
+  <% @extras.each do |extra| %>
+    <%= Ingredient.find_by(id: extra.ingredient_id).name %><br>
+  <% end %>
 </p>

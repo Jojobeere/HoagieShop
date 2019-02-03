@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :customers
   resources :hoagies
   resources :orders
-  resources :reviews
+  resources :ordered_additionallies
 
   resources :reviews do
     resources :comments

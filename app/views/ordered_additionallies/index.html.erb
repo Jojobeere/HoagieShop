@@ -1,0 +1,15 @@
+<h1>Extras</h1>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Hoagie No.</th>
+    <th>Ingredient</th>
+  </tr>
+  <% @extras.each do |extra| %>
+    <tr>
+      <td><%= extra.id %></td>
+      <td><%= extra.hoagie_id %></td>
+      <td><%= Ingredient.find_by(id: extra.ingredient_id).name %></td>
+    </tr>
+  <% end %>
+</table>
