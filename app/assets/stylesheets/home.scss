@@ -29,9 +29,18 @@ h2 {
     height: auto;
 }
 
+p {
+    background-color: rgba(255, 248, 220, 0.6);
+    max-width: 20em;
+}
+
 .button_to {
     margin: 1em;
-    text-align: center
+    text-align: center;
+}
+
+.link_to {
+  text-align: center;
 }
 
 .container {

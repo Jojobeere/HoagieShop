@@ -3,8 +3,10 @@
   <strong>Your Details:</strong>
   <%= render 'customers/form' %>
 </p>
+<p>
 <strong>Status</strong>
 <%= @order.status %><br>
+</p>
 <p>
   <strong>Hoagies:</strong>
   <% @hoagies.each do |hoagie| %>
@@ -19,4 +21,4 @@
   <strong>Price:</strong>
   <%= @order.price %> EUR<br>
 </p>
-<%= link_to 'Back to Homepage', home_index_path %>
+<p class= "link_to"><%= link_to 'Back to Homepage', home_index_path %></p>
