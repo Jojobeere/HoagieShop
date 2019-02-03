@@ -1,4 +1,5 @@
 class HoagiesController < ApplicationController
+  http_basic_authenticate_with name: "admin247", password: "secret!"
   def index
     @hoagies = Hoagie.all
   end
